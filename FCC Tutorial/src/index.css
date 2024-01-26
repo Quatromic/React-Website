@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster+Two&family=Noto+Sans:wght@100&family=Open+Sans:wght@300&family=Oswald:wght@200&display=swap');
+/*Login page*/
+*{
+    margin:0;
+}
+#credentials{
+    /*background:linear-gradient(to right,#ebf4f5,#b5c6e0);*/
+    /*Glass Morphism*/
+    background: rgba(255, 255, 255, 0);
+    border-radius: 50%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-top:none;
+    border-bottom:none;
+
+    width:350px;
+    height:350px;
+    padding:40px;
+    margin:0 auto;
+    text-align: center;
+    position: relative;
+    top:190px;
+    line-height: 35px;
+}
+.header{
+    text-align: center;
+    position: relative;
+    color:white;
+    top:160px;
+    font-family:"Dancing Script",sans-serif;
+    font-weight: lighter;
+    text-decoration: underline;
+}
+#credentials input{
+    border:none;
+    background:transparent;
+    margin-bottom:10px;
+    font-family: 'Lobster Two',sans-serif;
+    border-bottom:1px solid black;
+    font-size:17px;
+    text-align: center;
+    margin-bottom: 20px;
+    color:white;
+}
+#credentials input:focus{
+    outline: none;
+}
+#credentials p{
+    font-size: 15px;
+    color:white;
+    font-family:"Dancing Script",sans-serif;
+}
+#credentials p::before,#credentials p::after{
+    content:'';
+    width:25%;
+    height:1px;
+    background-color: grey;
+}
+#credentials p::before{
+    position: absolute;
+    top:250px;
+    left:85px;  
+}
+#credentials p::after{
+    position: absolute;
+    top:250px;
+    right:85px;
+}
+#credentials button{
+    background:transparent;
+    border:none;
+    font-size:16.5px;
+    font-family:"Open Sans",sans-serif;
+    margin:10px;
+}
+#credentials button:hover{
+    cursor: pointer;
+}
+#btn1{
+    transition: color .5s ease-in-out;
+}
+#btn1:hover{
+    color:white;
+}
+#btn1::after{
+    content:'';
+    width:18%;
+    height:1px;
+    background-color: white;
+    position:absolute;
+    bottom:210px;
+    left:175px;
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition:transform .5s ease-in-out;
+}
+#btn1:hover::after{
+    transform: scale(1);
+    transform-origin: bottom left;
+}
+#btn2,#btn3{
+    border:1px solid black !important;
+    border-radius:25px;
+    width:150px;
+    height:35px;
+    transition:background-color .5s ease-in-out,color .5s ease-in-out;
+}
+#btn2:hover,#btn3:hover{
+    background-color: white;
+    color:black;
+}
+/*Login the two half images*/
+#half1,#half2{
+    position: absolute;
+    top:0;
+    width:50%;
+    height:100vh;
+    background-color: beige;
+    z-index: -1;
+    overflow: hidden;
+}
+#half2{
+    right:0;
+}
+#half1 img,#half2 img{
+    width:100%;
+    height:100%;
+}
+#divider{
+    width:1px;
+    height:100vh;
+    background-color:white;
+    position: absolute;
+    top:0;
+    right:50%;
+    z-index: -1;
+}
+#text1,#text2{
+    position: absolute;
+    top:400px;
+    line-height: 25px;
+    color:white;
+    z-index: 999;
+}
+#text1 h2,#text2 h2{
+    margin-bottom:15px;
+    margin-left:25px;
+    font-family:"Oswald",sans-serif;
+    font-weight: lighter;
+    text-decoration: underline;
+}
+#text2 h2{
+    margin-left:300px;
+}
+#text1 p,#text2, p{
+    font-family:"Lobster Two",sans-serif;
+}
+#text1{
+    left:50px;
+}
+#text2{
+    right:20px;
+}
+#text1.anim1{
+    animation-name:fromleft;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+#text2.anim2{
+    animation-name:fromright;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+@keyframes fromleft {
+    from{
+        transform: translate3d(-125px,0,0);
+        opacity: 0;
+    }
+    to{
+        transform: translate3d(0,0,0);
+        opacity: 1;
+    }
+}
+@keyframes fromright {
+    from{
+        transform: translate3d(125px,0,0);
+        opacity: 0;
+    }
+    to{
+        transform: translate3d(0,0,0);
+        opacity: 1;
+    }
+}
+#desc{
+    position: absolute;
+    bottom:100px;
+    font-family:"Dancing Script",sans-serif;
+    left:40%;
+    color:white;
+}
+#desc.animation{
+    animation-name:liftup;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+@keyframes liftup{
+    from{
+        transform: translate3d(0,150px,0);
+        opacity: 0;
+    }
+    to{
+        transform: translate3d(0,0,0);
+        opacity: 1;
+    }
+}
+#liner{
+    background-color: grey;
+    width:100%;
+    height:1px;
+    margin-top:10px;
+}
