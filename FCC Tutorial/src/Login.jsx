@@ -1,4 +1,6 @@
 import { useState } from "react"
+import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
+import HomePage from "./Home"
 import img1 from './Two/gallery-3.jpg'
 import img2 from './Two/gallery-4.jpg'
 
@@ -28,9 +30,23 @@ const Login = () => {
 
     const submitbtn = (e) => {
         e.preventDefault()
+        const details = {username,email,password}
+        fetch("http://localhost:9000/user",{
+            method:"POST",
+            headers:{'Content-type':'Application/json'},
+            body:JSON.stringify(details)
+        }).then(() => console.log("Data added")).catch(error => console.log(error))
+        const LoginPage = document.getElementById("Lpage")
+        LoginPage.classList.add("hidden")
+
+        setTimeout(() => {
+            LoginPage.style.visibility = "hidden"
+        }, 3100);
+
+        
     }
     return(
-        <div>
+        <div id="Lpage">
             <h1 className="header">Login</h1>
             <div id="credentials">
                 <form>
@@ -70,9 +86,7 @@ const Login = () => {
                     <div id="liner"></div>
                 </div>
             </div>
-            {setTimeout(() => {
-                document.getElementById("desc").classList.add("animation")
-            }, 500)};
+
             {setTimeout(() => {
                 const texts = [document.getElementById("text1"),document.getElementById("text2")]
                 texts.forEach((element,index) => {
@@ -81,7 +95,9 @@ const Login = () => {
                     }
                     element.classList.add("anim2")
                 })
-            },500)}
+                const Descripition = document.getElementById("desc")
+                Descripition.classList.add("animation")
+            },1)}
             <h2 id="desc">Journey of exploration awaits you</h2>
         </div>
     )

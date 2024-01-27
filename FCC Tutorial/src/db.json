@@ -1,0 +1,23 @@
+{
+  "user": [
+    {},
+    {
+      "id": 0,
+      "username": "Shift",
+      "email": "lwmuchiri@gmail.com",
+      "password": "Davidwan1*"
+    },
+    {
+      "id": 1,
+      "username": "Lefty",
+      "email": "developingarena@gmail.com",
+      "password": "Dlaw2006"
+    },
+    {
+      "id": 2,
+      "username": "DavidShawn",
+      "email": "lwmuchiri@gmail.com",
+      "password": "Davidwan1*"
+    }
+  ]
+}
